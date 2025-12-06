@@ -9,7 +9,6 @@ package-lock.json
 # Env & Secrets
 .env
 .env.local
-.env.*
 *.pem
 *.key
 *.crt

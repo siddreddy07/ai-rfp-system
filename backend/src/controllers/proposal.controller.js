@@ -80,7 +80,7 @@ export const getEmail = async (req,res) => {
                     prompt:`You will receive:
     
     - formattedEmails = ${data}  
-    - rfp = ${rfp} (rfp.vendorsSent includes _id, email, createdAt)
+    - rfp = ${rfp.vendorsSent} (rfp.vendorsSent includes _id, email, createdAt)
     
     Task: Extract proposals from emails as a JSON array matching proposalSchema.
     
@@ -98,9 +98,6 @@ export const getEmail = async (req,res) => {
        - items → [{ name, specs, quantity }] from email  
        - emailReceivedAt → timestamp  
        - aiSummary → 2–3 factual lines summarizing items, total price, delivery, warranty, vendorScore  
-    
-    4. **Attachments:** filename if explicit, true if implied, null if none  
-    
     5. **Output Rules:**  
        - Do not invent fields/items  
        - Do not guess numbers if unclear → ""  
@@ -110,24 +107,6 @@ export const getEmail = async (req,res) => {
        - price & quantity = numbers  
        - delivery & warranty = exact from email
     
-    Example:
-    
-    [
-      {
-        "rfpId": "693150922bfdc48a92750ab3",
-        "vendorId": "693150922bfdc48a92750ab3",
-        "vendorScore": 90,
-        "delivery": "14 days",
-        "price": 570000,
-        "warranty": "1-year standard",
-        "items": [
-          { "name": "Office Laptop", "specs": "i5, 8GB RAM, 512GB SSD", "quantity": 10 },
-          { "name": "Full HD Monitor", "specs": "24-inch, Commercial Grade", "quantity": 10 }
-        ],
-        "emailReceivedAt": "2025-12-04T22:46:00Z",
-        "aiSummary": "Offers 10 Office Laptops and 10 Full HD Monitors for ₹570,000. Delivery in 14 days. Warranty: 1-year standard. Vendor score 90."
-      }
-    ]
     `
                 }) 
     

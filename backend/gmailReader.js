@@ -6,10 +6,10 @@ dotenv.config({ path: ".env.local" });
 
 const config = {
   imap: {
-    user: "hrxreddy007@gmail.com",
+    user: process.env.IMAP_USER,
     password: process.env.GMAIL_APP_PASS,
-    host: "imap.gmail.com",
-    port: 993,
+    host: process.env.IMAP_HOST,
+    port: process.env.IMAP_PORT,
     tls: true,
     tlsOptions: { rejectUnauthorized: false }
   }

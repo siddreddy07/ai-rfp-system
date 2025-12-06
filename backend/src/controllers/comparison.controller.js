@@ -27,7 +27,7 @@ export const compare = async(req,res)=>{
            Proposals :  ${proposals}
 
 Input: An array of proposals for a single RFP. Each proposal has:
-- rfpId
+- rfpId (valid ObjectId)
 - vendorId
 - vendorScore (1-100)
 - delivery (timeline)

@@ -50,7 +50,7 @@ This full-stack application drastically reduces manual work in procurement by au
 
 | Layer         | Technology                                      |
 |---------------|-------------------------------------------------|
-| Frontend      | React.js, Tailwind CSS, Shadcn UI               |
+| Frontend      | React.js, Tailwind CSS, Shadcn UI,  Zustand            |
 | Backend       | Node.js, Express.js                             |
 | Database      | MongoDB + Mongoose                              |
 | Email (Send)  | Nodemailer + Gmail SMTP                         |
@@ -89,11 +89,25 @@ npm install
 ### Environment Variables (`backend/.env.local`)
 
 ```env
+//Inside backend
+
+
 MONGO_DB_URL=
+
 GOOGLE_GENERATIVE_AI_API_KEY=
+
 GMAIL_APP_PASS=
 GMAIL_USER=
 GMAIL_HOST=
+PORT=8000
+
+
+
+# IMAP_USER and GMAIL_USER must be same
+
+IMAP_USER= 
+IMAP_HOST=
+IMAP_PORT=
 ```
 
 ### Run Locally
@@ -128,7 +142,7 @@ backend → http://localhost:8000
 ```
 
 ### RFP
-```ts
+```js
 {
   title: string;
   category: string;
@@ -144,7 +158,7 @@ backend → http://localhost:8000
 ```
 
 ### Proposal
-```ts
+```js
 {
   rfpId: ObjectId;
   vendorId: ObjectId;
@@ -160,7 +174,7 @@ backend → http://localhost:8000
 ```
 
 ### Comparison
-```ts
+```js
 {
   rfpId: ObjectId;
   proposals: ObjectId[];
@@ -216,7 +230,7 @@ backend → http://localhost:8000
 
 ## Demo Video
 
-[Watch Full Demo on Google Drive](https://drive.google.com/file/d/1mkFIpahDIQU61k6GKyQk7VHI79jdFeCa/view?usp=sharing)
+[Watch Full Demo on Google Drive](https://drive.google.com/file/d/1NLEPU94coNpPGxMFpwYZPGl0uLzkb0_n/view?usp=sharing)
 
 ---
 
