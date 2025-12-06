@@ -71,14 +71,14 @@ This full-stack application drastically reduces manual work in procurement by au
 ### Installation
 
 ```bash
-git clone https://github.com/yourusername/ai-rfp-system.git
+git clone https://github.com/siddreddy07/ai-rfp-system.git
 cd ai-rfp-system
 
 # Backend
 cd backend
 npm install
 create .env.local   # then fill in your credentials
-go through .ev.example
+go through .env.example
 
 
 # Frontend
